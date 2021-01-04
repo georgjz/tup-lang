@@ -1,0 +1,25 @@
+{
+    "name": "tup-lang",
+    "displayName": "tup-lang",
+    "description": "Syntax highlighting for Tupfiles",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tup",
+            "aliases": ["Tup", "tup"],
+            "extensions": [""],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tup",
+            "scopeName": "source.tup",
+            "path": "./syntaxes/tup.tmLanguage.json"
+        }]
+    }
+}
