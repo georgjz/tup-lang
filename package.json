@@ -1,7 +1,7 @@
 {
     "name": "tup-lang",
-    "displayName": "tup-lang",
-    "description": "Syntax highlighting for Tupfiles",
+    "displayName": "Tup Syntax Highlighting",
+    "description": "Syntax highlighting for Tupfiles used by the Tup build system",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.52.0"

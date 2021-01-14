@@ -1,32 +1,57 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Tup",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.tup",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.tup",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.tup",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.tup"
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Tup",
+    "patterns": 
+    [
+        { "include": "#comments" },
+        { "include": "#keywords" },
+        { "include": "#groups" },
+        { "include": "#strings" }
+    ],
+    "repository": 
+    {    
+        "comments":
+        {
+            "name": "comment.line.tup",
+            "match": "\\#.*$"
+        },
+        "keywords": 
+        {
+            "patterns": [
+            {
+                "name": "keyword.control.$1.tup",
+                "match": "\\b(foreach|include_rules|\\.gitignore)\\b"
+            },
+            {
+                "name": "keyword.operator.$2.tup",
+                "match": "(\\||\\>|\\%+[fbBeoOdg]|\\:|\\!)"
+            }
+            ]
+        },
+        "strings": 
+        {
+            "name": "string.quoted.double.tup",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+            {
+                "name": "constant.character.escape.tup",
+                "match": "\\\\."
+            }
+            ]
+        },
+        "groups": 
+        {
+            "name": "string.quoted.double.tup",
+            "begin": "\\%?\\<",
+            "end": "\\>",
+            "patterns": [
+            {
+                "name": "constant.character.escape.tup",
+                "match": "\\\\."
+            }
+            ]
+        }
+    },
+    "scopeName": "source.tup"
 }
