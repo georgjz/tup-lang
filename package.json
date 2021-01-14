@@ -3,6 +3,12 @@
     "displayName": "Tup Syntax Highlighting",
     "description": "Syntax highlighting for Tupfiles used by the Tup build system",
     "version": "0.0.1",
+    "publisher": "clcxce",
+    "icon": "logo.png",
+    "repository": {
+        "url": "https://github.com/georgjz/tup-lang",
+        "type": "git"
+    },
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -12,8 +18,9 @@
     "contributes": {
         "languages": [{
             "id": "tup",
-            "aliases": ["Tup", "tup"],
-            "extensions": [""],
+            "aliases": ["Tupfile"],
+            "extensions": [".tup"],
+            "filenames": ["Tupfile", "Tupfile.ini"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
