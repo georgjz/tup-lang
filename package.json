@@ -2,7 +2,7 @@
     "name": "tup-lang",
     "displayName": "Tup Syntax Highlighting",
     "description": "Syntax highlighting for Tupfiles used by the Tup build system",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "clcxce",
     "icon": "logo.png",
     "repository": {
