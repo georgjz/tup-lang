@@ -2,7 +2,7 @@
     "name": "tup-lang",
     "displayName": "Tup Syntax Highlighting",
     "description": "Syntax highlighting for Tupfiles used by the Tup build system",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "clcxce",
     "icon": "logo.png",
     "repository": {
@@ -16,17 +16,28 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "tup",
-            "aliases": ["Tupfile"],
-            "extensions": [".tup"],
-            "filenames": ["Tupfile", "Tupfile.ini"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "tup",
-            "scopeName": "source.tup",
-            "path": "./syntaxes/tup.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "tup",
+                "aliases": [
+                    "Tupfile"
+                ],
+                "extensions": [
+                    ".tup"
+                ],
+                "filenames": [
+                    "Tupfile",
+                    "Tupfile.ini"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "tup",
+                "scopeName": "source.tup",
+                "path": "./syntaxes/tup.tmLanguage.json"
+            }
+        ]
     }
 }
