@@ -4,8 +4,10 @@
     "patterns": 
     [
         { "include": "#comments" },
+        { "include": "#symbols" },
         { "include": "#keywords" },
         { "include": "#groups" },
+        { "include": "#variables" },
         { "include": "#strings" }
     ],
     "repository": 
@@ -15,16 +17,21 @@
             "name": "comment.line.tup",
             "match": "\\#.*$"
         },
+        "symbols": 
+        {
+            "name": "entity.name.function.label.tup",
+            "match": "^[A-Za-z\\._][A-Za-z0-9\\._]*\\s*(?=[+:]?\\=)"
+        },
         "keywords": 
         {
             "patterns": [
             {
                 "name": "keyword.control.$1.tup",
-                "match": "\\b(foreach|include_rules|\\.gitignore)\\b"
+                "match": "\\b(foreach|include_rules|.gitignore)\\b"
             },
             {
                 "name": "keyword.operator.$2.tup",
-                "match": "(\\||\\>|\\%+[fbBeoOdg]|\\:|\\!)"
+                "match": "(\\||\\>|\\%+[fbBeoOdg]|\\:|\\!|\\^|[+:]?\\=)"
             }
             ]
         },
@@ -40,11 +47,23 @@
             }
             ]
         },
+        "variables": 
+        {
+            "name": "variable.other.tup",
+            "begin": "\\$\\(",
+            "end": "\\)",
+            "patterns": [
+            {
+                "name": "variable.other.tup",
+                "match": "\\\\."
+            }
+            ]
+        },
         "groups": 
         {
             "name": "string.quoted.double.tup",
-            "begin": "\\%?\\<",
-            "end": "\\>",
+            "begin": "\\%?[<{]",
+            "end": "[>}]",
             "patterns": [
             {
                 "name": "constant.character.escape.tup",
