@@ -27,7 +27,11 @@
             "patterns": [
             {
                 "name": "keyword.control.$1.tup",
-                "match": "\\b(foreach|include_rules|.gitignore)\\b"
+                "match": "\\b(foreach|include_rules|.gitignore|include|run|preload|export)\\b"
+            },
+            {
+                "name": "keyword.control.conditional.tup",
+                "match": "\\b(?i)(ifn?eq|ifn?def|else|endif)\\b"
             },
             {
                 "name": "keyword.operator.$2.tup",
@@ -50,7 +54,7 @@
         "variables": 
         {
             "name": "variable.other.tup",
-            "begin": "\\$\\(",
+            "begin": "[$@]\\(",
             "end": "\\)",
             "patterns": [
             {
