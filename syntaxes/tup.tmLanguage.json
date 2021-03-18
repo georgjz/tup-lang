@@ -1,80 +1,87 @@
 {
-    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "Tup",
-    "patterns": 
-    [
-        { "include": "#comments" },
-        { "include": "#symbols" },
-        { "include": "#keywords" },
-        { "include": "#groups" },
-        { "include": "#variables" },
-        { "include": "#strings" }
-    ],
-    "repository": 
-    {    
-        "comments":
-        {
-            "name": "comment.line.tup",
-            "match": "\\#.*$"
-        },
-        "symbols": 
-        {
-            "name": "entity.name.function.label.tup",
-            "match": "^[A-Za-z\\._][A-Za-z0-9\\._]*\\s*(?=[+:]?\\=)"
-        },
-        "keywords": 
-        {
-            "patterns": [
-            {
-                "name": "keyword.control.$1.tup",
-                "match": "\\b(foreach|include_rules|.gitignore|include|run|preload|export)\\b"
-            },
-            {
-                "name": "keyword.control.conditional.tup",
-                "match": "\\b(?i)(ifn?eq|ifn?def|else|endif)\\b"
-            },
-            {
-                "name": "keyword.operator.$2.tup",
-                "match": "(\\||\\>|\\%+[fbBeoOdg]|\\:|\\!|\\^|[+:]?\\=)"
-            }
-            ]
-        },
-        "strings": 
-        {
-            "name": "string.quoted.double.tup",
-            "begin": "\"",
-            "end": "\"",
-            "patterns": [
-            {
-                "name": "constant.character.escape.tup",
-                "match": "\\\\."
-            }
-            ]
-        },
-        "variables": 
-        {
-            "name": "variable.other.tup",
-            "begin": "[$@]\\(",
-            "end": "\\)",
-            "patterns": [
-            {
-                "name": "variable.other.tup",
-                "match": "\\\\."
-            }
-            ]
-        },
-        "groups": 
-        {
-            "name": "string.quoted.double.tup",
-            "begin": "\\%?[<{]",
-            "end": "[>}]",
-            "patterns": [
-            {
-                "name": "constant.character.escape.tup",
-                "match": "\\\\."
-            }
-            ]
-        }
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Tup",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#symbols" },
+    { "include": "#keywords" },
+    { "include": "#groups" },
+    { "include": "#variables" },
+    { "include": "#strings" }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.tup",
+      "match": "\\#.*$"
     },
-    "scopeName": "source.tup"
+    "symbols": {
+      "name": "entity.name.function.label.tup",
+      "match": "^[A-Za-z\\._][A-Za-z0-9\\._]*\\s*(?=[+:]?\\=)"
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.$1.tup",
+          "match": "\\b(foreach|include_rules|.gitignore|include|run|preload|export)\\b"
+        },
+        {
+          "name": "keyword.control.conditional.tup",
+          "match": "\\b(?i)(ifn?eq|ifn?def|else|endif)\\b"
+        },
+        {
+          "name": "keyword.operator.$2.tup",
+          "match": "(\\||\\>|\\%+[fbBeoOdg]|\\:|\\!|\\^|[+:]?\\=)"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.as",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.as",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.as",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.as",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "variables": {
+      "name": "variable.other.tup",
+      "begin": "[$@]\\(",
+      "end": "\\)",
+      "patterns": [
+        {
+          "name": "variable.other.tup",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "groups": {
+      "name": "string.quoted.double.tup",
+      "begin": "\\%?[<{]",
+      "end": "[>}]",
+      "patterns": [
+        {
+          "name": "constant.character.escape.tup",
+          "match": "\\\\."
+        }
+      ]
+    }
+  },
+  "scopeName": "source.tup"
 }
